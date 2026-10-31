@@ -1,8 +1,8 @@
-<!-- I added lang="en" so the screen reader knows the page is in English. -->
+<!-- I added lang="en" so the screen reader knows the page is in English -->
 <html class="js backgroundsize borderimage csstransitions fontface svg" dir="ltr" lang="en">
 
 <head>
-	<!-- I changed the title from "Untitled" to a title that describes the page. -->
+	<!-- I changed the title from "Untitled" to a title that describes the page -->
 	<title>Home Hi/Max Real Estate &amp; Houses</title>
 	<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_1_0/wet-boew/js/i18n/en.min.js"></script>
 	<script
@@ -24,19 +24,24 @@
 			width: 30px;
 			fill: #91929a;
 		}
+
+		/* I added a background color to the table headers */
+		#stats th {
+			background-color: #e8eef4;
+		}
 	</style>
 </head>
 
 <body>
 
-	<!-- I changed the div to a header so the screen reader announces the top part of the page as a banner region. -->
+	<!-- I changed the div to a header so the screen reader announces the top part of the page as a banner region -->
 	<header> <!-- start of header-->
 
 		<div class="app-bar">
 			<div class="container">
 				<div class="row">
 					<section class="col-xs-12">
-						<h2 class="wb-inv">Name of Web application</h2>
+						<h2 class="wb-inv">Hi/Max Real Estate</h2>
 						<a class="app-name" href="./index-en.html">Hi/Max Real Estate</a>
 					</section>
 				</div>
@@ -44,14 +49,14 @@
 		</div>
 
 
-		<!-- I changed the div to a nav so the screen reader announces the menu as a navigation region. I gave it a unique label with aria-labelledby, because the page will have more than one nav. -->
+		<!-- I changed the div to a nav so the screen reader announces the menu as a navigation region. I gave it a unique label with aria-labelledby, because the page will have more than one nav -->
 		<nav id="wb-sm" aria-labelledby="topics-menu" data-ajax-replace="../ajax/cdtsMenu-en.html" data-trgt="mb-pnl"
 			class="wb-menu visible-md visible-lg wb-init wb-data-ajax-replace-inited wb-menu-inited wb-navcurr-inited"
 			typeof="SiteNavigationElement">
 			<div class="pnl-strt container nvbar">
 				<h2 id="topics-menu">Topics menu</h2>
 				<div class="row">
-					<!-- I removed role="menubar", role="menuitem", tabindex, aria-posinset, and aria-setsize, because this is a simple list of links. Now every link can be reached with the Tab key. -->
+					<!-- I removed role="menubar", role="menuitem", tabindex, aria-posinset, and aria-setsize, because this is a simple list of links. Now every link can be reached with the Tab key -->
 					<ul class="list-inline menu">
 						<li><a class="item" href="index-en.html">Home</a></li>
 						<li><a class="item" href="internet-en.html">Buying</a></li>
@@ -69,32 +74,96 @@
 
 	<main property="mainContentOfPage" class="container">
 		<h1>Welcome</h1>
-		<p>Content A here</p>
+		<!-- Content A: I used a section with a heading, a paragraph, and a link -->
+		<section aria-labelledby="content-a-title">
+			<h2 id="content-a-title">Hi/Max Real Estate &amp; Houses</h2>
+			<p>Buying or selling a home is likely the largest and most important transaction you’ll ever make. That’s
+				why so many trust Hi/MAX Real Estate, which according to Canadian consumers, has been voted #1 Most
+				Trusted Real Estate Agents in Canada six times in a row.</p>
+			<p><a href="http://www.google.ca">Lets get started</a></p>
+		</section>
 		<div class="row">
 			<div class="col-md-4 pull-right">
-				<p></p>Content B here
+				<!-- Content B: I used an aside because this box is related to the main content. I gave it a unique label with aria-labelledby, and I used a list for the links -->
+				<aside aria-labelledby="content-b-title">
+					<h2 id="content-b-title">Related resources</h2>
+					<p>It's time to sell and find the next "one". Let us help you navigate the ins &amp; outs of your
+						next move.</p>
+					<ul>
+						<li><a href="http://www.google.ca">Looking for an upgrade?</a></li>
+						<li><a href="http://www.google.ca">Buying tips</a></li>
+						<li><a href="http://www.google.ca">How much is your current home worth?</a></li>
+					</ul>
+				</aside>
 			</div>
 			<div class="col-md-8">
-				<p>Content C here</p>
+				<!-- Content C: I used a section with a heading and a paragraph. For the table, I used th for header cells and td for data cells, a caption for the title, and id and headers so the screen reader reads the right headers for each cell -->
+				<section aria-labelledby="content-c-title">
+					<h2 id="content-c-title">Why choosing HI/Max</h2>
+					<p>Hi/Max agents go above and beyond and always strive to be the best they can be. HI/MAX is
+						extremely community focused, and our agents are too!</p>
 
+					<table id="stats" class="table">
+						<caption>Stats of HI/Max</caption>
+						<thead>
+							<tr>
+								<th id="year" rowspan="2">Year</th>
+								<th id="sold" colspan="2">Sold Properties</th>
+								<th id="price" colspan="2">Average selling price</th>
+							</tr>
+							<tr>
+								<th id="quebec" headers="sold">Quebec</th>
+								<th id="ontario" headers="sold">Ontario</th>
+								<th id="single" headers="price">Single house</th>
+								<th id="condo" headers="price">Condo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th id="y2021" headers="year">2021</th>
+								<td headers="y2021 sold quebec">50</td>
+								<td headers="y2021 sold ontario">100</td>
+								<td headers="y2021 price single">$500,00</td>
+								<td headers="y2021 price condo">189,000</td>
+							</tr>
+							<tr>
+								<th id="y2022" headers="year">2022</th>
+								<td headers="y2022 sold quebec">100</td>
+								<td headers="y2022 sold ontario">200</td>
+								<td headers="y2022 price single">$780,00</td>
+								<td headers="y2022 price condo">240,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
 
 			</div>
 		</div>
 		<div class="clear"></div>
-		<div>Content D here</div>
-		<div class="row">
-			<div class="col-md-4 ">
-				<p>Content F here</p>
+		<!-- Content D, F, G, H: I used a section with a heading, and an article for each resource with an image, a heading link, and a paragraph -->
+		<section aria-labelledby="content-d-title">
+			<h2 id="content-d-title">More Resources on How to Choose the Right Agent</h2>
+			<div class="row">
+				<article class="col-md-4">
+					<img src="1.png" alt="A red birdhouse with a For Sale sign hanging from a tree">
+					<h3><a href="http://www.google.ca">What Are The Risks of Selling a Home Yourself?</a></h3>
+					<p>We’ve all seen the videos, read the stories, and gasped at the images of people who thought they
+						could conquer a project that would have been better left to the professionals. Read more</p>
+				</article>
+				<article class="col-md-4">
+					<img src="2.png" alt="A real estate agent talking with a client at a table">
+					<h3><a href="http://www.google.ca">7 Questions to Ask a Real Estate Agent Before You Commit</a></h3>
+					<p>According to research by the National Association of Realtors, there are considerable benefits to
+						working with a real estate agent, including higher sale prices.</p>
+				</article>
+				<article class="col-md-4">
+					<img src="3.png" alt="A real estate agent putting a For Sale sign in front of a house">
+					<h3><a href="http://www.google.ca">8 Reasons to Hire an Agent When Selling Your Home</a></h3>
+					<p>With all the many different moving parts involved in selling your home, here are eight very valid
+						reasons to have a real estate agent on speed dial.</p>
+				</article>
 			</div>
-			<div class="col-md-4">
-				<p>Content G here</p>
-
-			</div>
-			<div class="col-md-4">
-				<p>Content H here</p>
-
-			</div>
-		</div>
+		</section>
 		<div class="pagedetails">
 			<dl id="wb-dtmd">
 				<dt>Date modified: </dt>
@@ -104,11 +173,11 @@
 
 
 	</main>
-	<!-- I changed the div to a footer so the screen reader announces the bottom part of the page as a content info region. -->
+	<!-- I changed the div to a footer so the screen reader announces the bottom part of the page as a content info region -->
 	<footer id="wb-info" class=" wb-navcurr-inited">
 		<div class="gc-sub-footer">
 			<div class="container d-flex align-items-center">
-				<!-- I changed the div to a nav with aria-labelledby, so this second navigation region has a unique label that is different from the Topics menu. -->
+				<!-- I changed the div to a nav with aria-labelledby, so this second navigation region has a unique label that is different from the Topics menu -->
 				<nav aria-labelledby="aboutWebApp">
 					<h3 class="wb-inv" id="aboutWebApp">Hi/Max Real Estate</h3>
 					<ul>
@@ -116,7 +185,7 @@
 						<li><a href="#">Privacy policy</a></li>
 						<li><a href="#">Accessibility statement</a></li>
 						<li style="list-style: none;" class="social">
-							<!-- I added role="img" and a title to the SVG so the screen reader announces the Twitter link with a clear name. -->
+							<!-- I added role="img" and a title to the SVG so the screen reader announces the Twitter link with a clear name -->
 							<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" role="img"
 									aria-labelledby="twitter-title">
 									<title id="twitter-title">Follow Hi/Max Real Estate on Twitter</title>
